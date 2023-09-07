@@ -11,8 +11,11 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 aux_source_directory(src SRC)
-message(STATUS ${SRC})
 set(INCLUDE "include")
+add_library(my_math)
+target_sources(my_math PRIVATE ${SRC})
+target_include_directories(my_math PUBLIC ${INCLUDE})
 
-add_executable(run ${SRC})
-target_include_directories(run PRIVATE ${INCLUDE})
+
+add_executable(run test/main.cpp)
+target_link_libraries(run my_math)

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(course_03)
+project(course_04)
 
 set(CMAKE_CXX_STANDARD 11)  # 将 C++ 标准设置为 C++ 11
 set(CMAKE_CXX_STANDARD_REQUIRED ON)  # C++ 11 是强制要求，不会衰退至低版本
@@ -14,7 +14,7 @@ aux_source_directory(src SRC)
 set(INCLUDE "include")
 add_library(my_math)
 target_sources(my_math PRIVATE ${SRC})
-target_include_directories(my_math PUBLIC ${INCLUDE})
+target_include_directories(my_math INTERFACE ${INCLUDE})
 
 
 add_executable(run test/main.cpp)

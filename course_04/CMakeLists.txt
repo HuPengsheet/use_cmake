@@ -14,7 +14,7 @@ aux_source_directory(src SRC)
 set(INCLUDE "include")
 add_library(my_math)
 target_sources(my_math PRIVATE ${SRC})
-target_include_directories(my_math INTERFACE ${INCLUDE})
+target_include_directories(my_math PUBLIC ${INCLUDE})
 
 
 add_executable(run test/main.cpp)

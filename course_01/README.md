@@ -5,7 +5,7 @@
 参考代码在：https://github.com/HuPengsheet/use_cmake/tree/master/course_01
 
 项目的目录结构
-.
+
 ├── CMakeLists.txt
 └── main.cpp
 

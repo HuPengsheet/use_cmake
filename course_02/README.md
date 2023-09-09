@@ -6,9 +6,7 @@
 
 .
 ├── CMakeLists.txt
-
 └── src
-
     └── main.cpp
     
 

@@ -1,4 +1,5 @@
-***项目链接在：https://github.com/HuPengsheet/use_cmake***欢迎大家多多star
+***项目链接在：https://github.com/HuPengsheet/use_cmake***
+
 
 ​	CMake是一个跨平台的构建工具，用于自动化软件构建过程，其实也就是作为一个工具帮助我们，完成代码的编译、安装与发布。我们知道，在window平台下有诸如VS2017，VS2019的集成化工具，我们只需要鼠标轻轻点一下，代码就可以完成编译和运行。但在linux系统下，我们没有像VS一样完善的集成化工具，我们自然需要采取其他的办法来完成这个工作。
 

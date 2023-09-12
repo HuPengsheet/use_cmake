@@ -1,4 +1,4 @@
-#include"my_math.hpp"
+#include"math.hpp"
 
 int  add(int a,int b){
     return a+b;

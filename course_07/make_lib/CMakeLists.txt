@@ -2,48 +2,51 @@ cmake_minimum_required(VERSION 3.10)
 project(course_07)
 
 
-#设置头文件和和源文件相关路径
-aux_source_directory(src SRC)
 set(INCLUDE "include")
+#set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_LIST_DIR}/install)
 
-set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
+add_library(add)
+target_sources(add PRIVATE src/add.cpp)
+target_include_directories(add  PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include/math>)  # <prefix>/include/mylib)
 
-#生成静态库目标
-add_library(my_math)
-target_sources(my_math PRIVATE ${SRC})
-target_include_directories(my_math PUBLIC ${INCLUDE})
+add_library(sub)
+target_sources(sub PRIVATE src/sub.cpp)
+target_include_directories(sub  PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include/math> ) # <prefix>/include/mylib)
 
 
 add_executable(run test/main.cpp)
 target_include_directories(run PRIVATE ${INCLUDE})
-target_link_libraries(run my_math)
+target_link_libraries(run sub add)
 
 
-include(CMakePackageConfigHelpers)
+
 
 install(TARGETS 
-            run my_math
-            EXPORT my_math_target
+            run add sub
+            EXPORT mathTarget
             RUNTIME DESTINATION bin
             LIBRARY DESTINATION lib)
 
 install(FILES 
-            include/my_math.hpp DESTINATION include/my_math)
+            include/math.hpp DESTINATION include/math)
 
 install(
       EXPORT
-        my_math_target
-      NAMESPACE
-          "math::"
-      DESTINATION
-          lib/cmake
-      )
+        mathTarget
+      NAMESPACE  "math::"
+      DESTINATION  lib/cmake/math
+)
 
+include(CMakePackageConfigHelpers)
 configure_package_config_file(
-        ${PROJECT_SOURCE_DIR}/cmake/my_mathConfig.cmake.in
-        ${CMAKE_CURRENT_BINARY_DIR}/my_mathConfig.cmake
+        ${PROJECT_SOURCE_DIR}/cmake/mathConfig.cmake.in
+        ${CMAKE_CURRENT_BINARY_DIR}/mathConfig.cmake
         INSTALL_DESTINATION lib/cmake
         )
 
 install(FILES 
-    ${CMAKE_CURRENT_BINARY_DIR}/my_mathConfig.cmake DESTINATION lib/cmake)
+    ${CMAKE_CURRENT_BINARY_DIR}/mathConfig.cmake DESTINATION lib/cmake/math)

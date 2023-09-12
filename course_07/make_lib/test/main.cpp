@@ -1,6 +1,4 @@
 #include<iostream>
-#include <fstream>
-
 #include<my_math.hpp>
 
 

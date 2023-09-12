@@ -1,5 +1,5 @@
 #include<iostream>
-#include"my_math.hpp"
+#include"math.hpp"
 
 using namespace std;
 

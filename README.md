@@ -29,6 +29,6 @@ g++ -o run main.cpp
 4. [第四节：CMake目标与目标属性](https://github.com/HuPengsheet/use_cmake/tree/master/course_04)
 5. [第五节：安装项目](https://github.com/HuPengsheet/use_cmake/tree/master/course_05)
 6. [第六节：find_package包含第三方库](https://github.com/HuPengsheet/use_cmake/tree/master/course_06)
-7. [第七节：让自己的包支持find_package命令]（https://github.com/HuPengsheet/use_cmake/tree/master/course_07）
+7. [第六节：让自己的包支持find_package命令](https://github.com/HuPengsheet/use_cmake/tree/master/course_07)
 
 ​	未完待续...

@@ -3,7 +3,7 @@
 本节项目代码在：https://github.com/HuPengsheet/use_cmake/tree/master/course_03
 
 ​	在实际的项目中，我们往往有许多的头文件和源文件，所有的头文件会放在一个目录下，所有的源文件会放在一个目录下。如下所示是示例代码的结构
-
+```
 .
 ├── CMakeLists.txt
 ├── include
@@ -12,7 +12,7 @@
     ├── add.cpp
     ├── main.cpp
     └── sub.cpp
-
+```
 ​	以下是每个文件里的代码
 
 ```c++
